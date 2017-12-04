@@ -3,11 +3,11 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 
-# @ signifies a decorator - way to wrap a funtion and modifying its behaviour
 
-@app.route('/profile/<name>')
-def profile(name):
-    return render_template("profile.html", name=name)
+@app.route('/')
+@app.route('/<user>')
+def idex(user=None):
+    return render_template("user.html", user=user)
 
 
 
